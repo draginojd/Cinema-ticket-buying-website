@@ -1,0 +1,1789 @@
+@import url("https://fonts.googleapis.com/css2?family=Arima:wght@400;700&display=swap");
+@import "normalize.css";
+@import url("star.css");
+@import url("movie-list.css");
+
+
+* {
+  box-sizing: border-box;
+}
+
+/* Sticky footer */
+
+#root {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  background-color: #1a1a1a;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: white;
+  padding: 20px;
+  margin-top: 0%;
+  /*changed from 10% to 0. */
+  position: relative;
+}
+
+.footerleft,
+.footercenter,
+.footerright {
+  width: 30%;
+  text-align: center;
+}
+
+.footerleft p {
+  text-align: center;
+}
+
+.footerright a img {
+  display: inline-block;
+  margin: 5px;
+}
+
+.crfooter {
+  margin-left: 4%;
+}
+
+/* Navbar page start */
+
+nav {
+  background-color: #1a1a1a;
+  text-decoration: none;
+  width: 100%;
+  height: 70px;
+  /* padding: 0 200px; */
+  display: flex;
+  justify-content: center;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  position: relative;
+}
+
+.navlinks {
+  color: white;
+  /* margin: auto; */
+  /* padding: -2px; */
+  /* text-align: center; */
+  font-size: 1.2em;
+  font-weight: bold;
+  padding: 30px;
+  text-decoration: none;
+  opacity: 0.7;
+}
+
+.navlinks.active {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+.navlinks:hover {
+  background-color: #333333;
+  color: #f5f5f5;
+  opacity: 0.9;
+  border-radius: 10px;
+}
+
+ul {
+  list-style-type: none;
+}
+
+nav ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+nav .img {
+  filter: invert(100%);
+  display: block;
+  position: absolute;
+  top: 28px;
+  right: 30px;
+}
+
+nav img:hover {
+  cursor: pointer;
+}
+
+.boxContent {
+  background-color: #575757;
+  border: #525252 solid;
+  width: 20%;
+  position: absolute;
+  right: 33px;
+  top: 60px;
+  /* border-radius: 10%; */
+  text-decoration: none;
+  /* padding-left: 20px;
+  padding-top: 5px;
+  padding-bottom: 5px; */
+  /* padding: 10px 15px 5px 10px; */
+  /* margin-top: 5px; */
+  margin-bottom: 5px;
+  margin-left: 5px;
+  /* margin: 10px; */
+}
+
+.boxContent.shown {
+  opacity: 1;
+  transition: opacity 2s;
+}
+
+.boxContent.hidden {
+  opacity: 0;
+  transition: opacity 2s;
+}
+
+.boxContent a {
+  color: black;
+  padding-left: 10px;
+  text-decoration: none;
+}
+
+.boxContent img {
+  filter: invert(100%);
+}
+
+@media screen and (max-width: 767px) {
+  .navlinks {
+    display: none;
+  }
+
+
+  nav img {
+    display: none;
+  }
+}
+
+/* __________________________ */
+
+body {
+  margin: 0;
+}
+
+body.ticketPage {
+  background-color: rgb(23, 23, 23);
+}
+
+.movieshr {
+  width: 100%;
+}
+
+.movieshrr {
+  width: 100%;
+  margin-bottom: 100px;
+}
+
+.movieList {
+  padding: 0 80px;
+}
+
+.clearfix::after {
+  /* clear fix for floating child elements */
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/*---------------home page start under here------------------*/
+
+body.homePage {
+  background-color: #000000;
+}
+
+.home-page-container{
+  display: flex;
+  flex-direction: column;
+   width: 100%;
+ 
+   align-items: center;
+   justify-content: center;
+   
+ }
+ 
+ .flex-container {
+   display: grid;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   grid-template-columns: auto auto auto auto;
+   
+   flex-wrap: nowrap;
+  
+   width: 90%;
+   height: 100%;
+   gap: 2%;
+   row-gap: 4%;
+   padding: 2%;
+   
+ }
+ 
+ .flex-container a {
+   background-color: #1a1a1a;
+   width: 100%;
+   height: 100%;
+   text-align: center;
+   position: relative;
+   border-radius: 10px;
+   padding: 2%;
+   cursor: pointer;
+ }
+ 
+ .flex-container p {
+   color: white;
+   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+   font-weight: bold;
+ }
+ 
+ .flexp {
+   position: relative;
+   margin-top: 4%;
+   text-align: center;
+   font-size: 4rem;
+   word-wrap: inherit;
+   font-weight: bolder;
+   letter-spacing: 4px;
+   color: white;
+   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+   height: auto;
+   
+ }
+ 
+ 
+ 
+ .flex-container div {
+   display: flex;
+   flex-direction: column;
+   width: 100%;
+   padding: 2%;
+   height: 100%;
+   text-align: center;
+   border-radius: 1%;
+   transition: ease-out 0.4s;
+   cursor: pointer;
+ }
+
+@keyframes appear{
+  from{
+    opacity:0;
+    scale: 0.5;
+  }
+  to{
+    opacity:1;
+    scale: 1;
+  }
+}
+
+.topcontainerimagediv {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  border-bottom: #00a2ff solid 15px;
+}
+
+
+div .topcontainerimagediv {
+  animation: appear linear;
+  animation-timeline: view();
+  animation-range: entry 0 cover 40%;
+}
+
+.topcontainerimagedivv p{
+  font-size: clamp(1vh, 2vh, 2.5vh);
+ 
+  height: auto;
+  width: 100%;
+}
+
+.topcontainerimagedivv {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  width: 100%;
+  background-color: rgb(37, 39, 46);
+  
+}
+
+.topcontainerimagedivv a{
+ 
+  width: 100%;
+  height: 100%;
+ 
+}
+
+.flex-container>div:hover {
+  box-shadow: inset 25vw 15px 0px 5px #00a2ff;
+}
+
+.topcontainerimages {
+  
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  aspect-ratio: 2/2;
+  background-color: pink;
+}
+
+.under-home-container {
+  margin-top: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ position: relative;
+  width: 70%;
+  height: 100%;
+  text-align: center;
+  background-color: #05a6e6;
+  border-radius: 2px;
+  animation: appear linear;
+  animation-timeline: view();
+  animation-range: entry 0 cover 40%;
+}
+
+.under-home-container p{
+  font-size: 40px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+  width: 100%;
+  text-align: left;
+  padding: 3%;
+}
+
+.undertext {
+  font-weight: 100;
+  color: white;
+  font-size: 22px;
+  word-wrap:auto;
+  
+ 
+}
+
+.undertopcontainer {
+  color: white;
+  width: 100%;
+
+}
+
+.snack-click {
+  text-align: center;
+  color: white;
+  font-size: 150%;
+  width: 100%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 600;
+
+}
+
+/*------------------------------TOP HOMEPAGE MEDIA QUERIES--------------------------------- */
+/*PHONE */
+@media (min-width:0px) and (max-width: 500px) {
+  
+  .home-page-container{
+   display: grid;
+  }
+
+  .flex-container{
+    display: grid;
+    width: 100%;
+  grid-template-columns: auto auto;
+   
+  }
+
+  h1.flexp{
+    font-size: clamp(1vh, 2.5vh, 4vh);
+  }
+
+  .topcontainerimagediv {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    border-bottom: #00a2ff solid 15px;
+   
+  }
+  
+  
+  div .topcontainerimagediv {
+    animation: appear linear;
+    animation-timeline: view();
+    animation-range: entry 0 cover 40%;
+  }
+  
+  .topcontainerimagedivv p{
+    font-size: clamp(1vh, 2vh, 2.5vh);
+   
+    height: auto;
+    width: 100%;
+  }
+  
+  .topcontainerimagedivv {
+    display: flex;
+    flex-direction: column;
+  
+   height: 40%;
+    background-color: rgb(37, 39, 46);
+    
+  }
+  
+  .topcontainerimagedivv a{
+   
+    width: 100%;
+    height: 100%;
+   
+  }
+
+  div.under-home-container{
+   
+    display: flex;
+    flex-direction: column;
+    width: 100%;  
+    height:50%;
+   
+  
+  }
+
+  .undertopcontainer{
+    text-align: center;
+   
+   
+  }
+  p.undertext{
+   
+    width: 100%;
+    font-size: clamp(1vh, 2vh, 4vh);
+    text-align: center;
+  }
+ 
+  h3.snack-click{
+  
+    text-align: center;
+    width: 100%;
+   
+    font-size: clamp(1vh, 1.7vh, 4vh);
+  }
+}
+
+/*IPAD */
+ @media (max-width: 850px) {
+  .home-page-container{
+    flex-direction: column;
+  }
+  .flex-container{
+    display: grid;
+    grid-template-columns: auto auto;
+    width: 100%;
+   
+  }
+
+  h1.flexp{
+    font-size: clamp(1vh, 2.5vh, 4vh);
+  }
+
+  .topcontainerimagediv{
+    width: 100%;
+  }
+
+  .topcontainerimagedivv a{
+   width: 100%;
+  }
+
+  div.under-home-container{
+    display: grid;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 50vh;
+  }
+  
+
+  .undertopcontainer{
+    text-align: center;
+
+  }
+
+  .snack-container{
+   
+  }
+
+  p.undertext{
+    width: 100%;
+    font-size: clamp(1vh, 2.5vh, 4vh);
+    text-align: center;
+  }
+ 
+  h3.snack-click{
+    
+    text-align: center;
+    width: 100%;
+    font-size: clamp(1vh, 1.7vh, 4vh);
+  }
+ }
+
+ @media(min-width: 850px) and (max-width: 1366px) {
+  /* Styles for screens up to 1366 pixels wide */
+  .home-page-container{
+     width: 100%;
+     align-items: center;
+     justify-content: center;
+     
+   }
+   
+   .flex-container {
+     display: grid;
+    grid-template-columns: auto auto auto;
+    row-gap: 1vh;
+   }
+   
+   .flex-container a {
+     background-color: #1a1a1a;
+     width: 100%;
+     height: 100%;
+     text-align: center;
+     position: relative;
+     border-radius: 10px;
+     padding: 2%;
+     cursor: pointer;
+   }
+   
+   .flex-container p {
+     color: white;
+     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+     font-weight: bold;
+   }
+   
+   .flexp {
+     position: relative;
+     margin-top: 4%;
+     text-align: center;
+     font-size: 4rem;
+     word-wrap: inherit;
+     font-weight: bolder;
+     letter-spacing: 4px;
+     color: white;
+     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+     height: auto;
+     
+   }
+   
+   
+   
+   .flex-container div {
+     display: flex;
+     flex-direction: column;
+     width: 100%;
+     padding: 2%;
+     height: 100%;
+     text-align: center;
+     border-radius: 1%;
+     transition: ease-out 0.4s;
+     cursor: pointer;
+   }
+
+
+   div.under-home-container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+}
+
+/* Standard laptop screens (Full HD) */
+@media (min-width: 1367px) and (max-width: 1920px) {
+  /* Styles for screens between 1366 and 1920 pixels wide */
+  .home-page-container{
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    
+  }
+  
+  .flex-container {
+    display: grid;
+   grid-template-columns: auto auto auto auto;
+  }
+    div.under-home-container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .undertopcontainer{
+    text-align: center;
+  }
+  p.undertext{
+    width: 100%;
+    font-size: clamp(1vh, 2.5vh, 4vh);
+    text-align: center;
+  }
+ 
+  h3.snack-click{
+    padding: 0.5vh;
+    text-align: center;
+    width: 100%;
+    font-size: clamp(1vh, 1.7vh, 4vh);
+  }
+}
+
+/*------------------------------------TOP-HOME-PAGE-END---------------------------------*/
+
+.snack-container {
+  width: 100%;
+  height: auto;
+  display: inline-block;
+  padding: 5px;
+}
+
+.snackimage1 , .snackimage2 {
+  cursor: pointer;
+ 
+  width: 50%;
+  box-shadow: inset 0 0 0 0 #ffffff28;
+  /*very important */
+  transition: ease-in 0.2s;
+  
+ 
+}
+
+.snackimage1:hover + .snackimage2:hover{
+  cursor: pointer;
+  border-radius: 50%;
+  width: 50%;
+  box-shadow: 200px 200px 590px 480px #000000;
+  
+  box-shadow: inset 0 0 0 0 #ffffff28;
+  /*very important */
+  transition: ease-in 0.4s;
+}
+
+
+
+.snacklink:after {
+  height: auto;
+  width: 900px;
+
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 0 #ffffff28;
+}
+
+.flexp p {
+  color: rgba(94, 94, 94, 0.471);
+  display: inline;
+  width: 100%;
+  margin-left: 20%;
+}
+
+
+
+/*------                FILTER homepage                ----------- */
+
+/*---------------------HOMEPAGE ENDS HERE---------------------------------------------------- */
+
+/*-----------------TICKET PAGE STARTS HERE----------------------------------------------------*/
+
+body.ticketPage {
+  background-color: rgb(23, 23, 23);
+}
+
+#ticket-pricing {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 60%;
+  margin: 0 auto;
+
+}
+
+/*---------ticket page MEDIA QUERIES--*/
+
+/*small screen (iphone) */
+@media only screen and (min-width: 280px) and (max-width: 401px) {
+  #ticket-pricing {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0px 0px 35px 0px #000000;
+    border-radius: 20px;
+
+    padding: 20px;
+  }
+
+  .ticket-option1,
+  .ticket-option2,
+  .ticket-option3 {
+    width: 30%;
+    border-radius: 20px;
+    border: none;
+    border-style: none;
+
+    margin-right: 5px 5px;
+  }
+
+  .ticket-option1 {
+
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 20px;
+  }
+
+  .ticket-option3 {
+
+    border-top-right-radius: 20px;
+  }
+
+  .quantity {
+    width: 40px;
+    text-align: center;
+    margin: 10px 0;
+  }
+
+  .add-ticket,
+  .remove-ticket {
+    width: 30px;
+    height: 25px;
+    margin: 5px;
+    border-radius: 5px;
+    font-size: 12px;
+  }
+
+  .vuxen-title,
+  .barn-title,
+  .senior-title {
+    font-size: 12px;
+  }
+
+  .price-tag-name {
+    font-size: 14px;
+  }
+
+  .seat-option-container p {
+    font-size: 13px;
+
+  }
+
+  .seat-option-container li {
+    width: 70px;
+    margin: 2px;
+    margin-bottom: -5px;
+  }
+
+  #total-price {
+    display: flex;
+    align-items: center;
+    position: relative;
+    font-size: 10px;
+    word-break: break-all;
+    height: 220px;
+    padding: 15px;
+  }
+
+}
+
+@media screen and (min-width: 402px) and (max-width: 499px) {
+  #total-price {
+    display: flex;
+    align-items: center;
+    position: relative;
+    font-size: 12px;
+    word-break: break-all;
+    height: 220px;
+    padding: 15px;
+  }
+}
+
+@media screen and (min-width: 500px) and (max-width: 670px) {
+  .tv-screen-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0px 0px 35px 0px #000000;
+    border-radius: 20px;
+    border-bottom: 1px solid rgb(38, 38, 38);
+    padding: 20px;
+  }
+
+  .ticket-option1,
+  .ticket-option2,
+  .ticket-option3 {
+    width: 100%;
+    border-radius: 20px;
+    border: none;
+    border-bottom: 1px solid rgb(38, 38, 38);
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+
+  .ticket-option1 {
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 20px;
+  }
+
+  .ticket-option3 {
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 20px;
+  }
+
+  .quantity {
+    width: 40px;
+    text-align: center;
+    margin: 10px 0;
+  }
+
+  .add-ticket,
+  .remove-ticket {
+    width: 50px;
+    height: 30px;
+    margin: 10px;
+    border-radius: 10px;
+    border: none;
+    background-color: rgb(187, 41, 58);
+    color: white;
+    cursor: pointer;
+  }
+
+  .vuxen-title,
+  .barn-title,
+  .senior-title,
+  .price-tag-name,
+  .total-price-css,
+  .quantity {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    color: aliceblue;
+  }
+
+  .vuxen-title,
+  .barn-title,
+  .senior-title,
+  .price-tag-name {
+    font-size: 16px;
+  }
+
+  .total-price-css {
+    font-weight: bold;
+    font-size: 10px;
+    word-wrap: break-word;
+  }
+
+  .add-ticket,
+  .remove-ticket {
+    width: 30px;
+    height: 25px;
+    margin: 5px;
+    border-radius: 5px;
+    font-size: 12px;
+  }
+
+  .vuxen-title,
+  .barn-title,
+  .senior-title {
+    font-size: 14px;
+  }
+
+  .price-tag-name {
+    font-size: 14px;
+  }
+
+  #total-price {
+    display: flex;
+    align-items: center;
+    position: relative;
+    font-size: 16px;
+    word-break: break-all;
+    height: 220px;
+    padding: 15px;
+  }
+
+}
+
+@media screen and (min-width: 648px) and (max-width: 900px) {
+  #total-price {
+    font-size: 19px;
+    padding: 20px;
+    word-break: keep-all;
+  }
+}
+
+#ticket-pricing {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 50%;
+  margin: 0 auto;
+}
+
+.ticket-container {
+  justify-content: center;
+  box-shadow: 0px 0px 35px 0px #000000;
+  border-radius: 20px;
+  border-bottom: 1px solid rgb(38, 38, 38);
+}
+
+.full-ticket-page {
+  margin-top: 15px;
+  height: 100%;
+  width: auto;
+  aspect-ratio: 11/16;
+}
+
+.ticket-option1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 30%;
+  padding: 20px;
+  border-left: 1px solid;
+  border-bottom-left-radius: 20px rgb(38, 38, 38);
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+
+.ticket-option2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 30%;
+  padding: 20px;
+}
+
+.ticket-option3 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 30%;
+  padding: 20px;
+  border-right: 1px solid rgb(38, 38, 38);
+}
+
+.quantity {
+  width: 40px;
+  text-align: center;
+  margin: 10px 0;
+}
+
+.add-ticket {
+  width: 50px;
+  height: 30px;
+  margin: 10px;
+  border-radius: 10px;
+  border: none;
+  background-color: rgb(187, 41, 58);
+  color: white;
+  cursor: pointer;
+}
+
+.remove-ticket {
+  width: 50px;
+  height: 30px;
+  margin: 10px;
+  border-radius: 10px;
+  border: none;
+  background-color: rgb(187, 41, 58);
+  color: white;
+  cursor: pointer;
+}
+
+.vuxen-title,
+.barn-title,
+.senior-title {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: aliceblue;
+}
+
+.price-tag-name {
+  color: white;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.total-price-css {
+  color: rgb(255, 255, 255);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: bold;
+  font-size: 30px;
+  position: relative;
+  width: 100%;
+  text-align: center;
+  word-wrap: break-word;
+}
+
+.quantity {
+  color: rgb(0, 0, 0);
+  background-color: rgb(255, 255, 255);
+  border-radius: 2px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: bold;
+}
+
+.ul-seat {
+  box-sizing: border-box;
+  color: white;
+  justify-content: center;
+  text-align: center;
+  display: flex;
+  justify-content: space-around;
+  padding-left: 33.3333%;
+  padding-right: 33.3333%;
+
+
+}
+
+.li-avaliable {
+  box-sizing: border-box;
+  background-color: #474747;
+  box-shadow: 0px 0px 35px 0px #000000;
+  border: 1px solid rgb(147, 147, 147);
+  width: 30%;
+  border-radius: 10px;
+}
+
+.li-selected {
+  box-sizing: border-box;
+  box-shadow: 0px 0px 35px 0px #000000;
+  width: 30%;
+  border-radius: 10px;
+  word-break: keep-all;
+}
+
+.li-sold {
+  box-sizing: border-box;
+  box-shadow: 0px 0px 35px 0px #000000;
+  border-radius: 10px;
+  width: 30%;
+}
+
+.seat-option-container {
+  border-style: none;
+  justify-content: center;
+  align-items: center;
+  /*  perspective: 500px;
+  margin-bottom:30px; */
+}
+
+.tv-screen-container {
+  width: 100%;
+  height: 250px;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  color: white;
+  display: flex;
+  justify-content: space-around;
+  position: relative;
+  transform: rotate3d(394, 1, 6, 35deg);
+}
+
+.tv-screen {
+  width: 370px;
+  height: 210px;
+  background-color: rgba(255, 255, 255, 0.891);
+  transform: rotate3d(394, 92, 25, 35deg);
+  position: absolute;
+  box-shadow: 0px 10px 85px 20px #000000;
+}
+
+.seat-selector-container {
+  align-items: center;
+  justify-content: center;
+  display: -moz-inline-grid;
+  display: -ms-inline-grid;
+  height: 400px;
+  transform: rotate3d(394, 1, 40, 35deg);
+}
+
+.row1 {
+  align-items: center;
+  align-content: center;
+  align-self: center;
+  width: 100%;
+  position: relative;
+  left: 41%;
+}
+
+.row2 {
+  align-items: center;
+  align-content: center;
+  align-self: center;
+  margin-bottom: 10px;
+  width: 100%;
+  position: relative;
+  left: 41%;
+}
+
+.row3 {
+  align-items: center;
+  align-content: center;
+  align-self: center;
+  width: 100%;
+  position: relative;
+  left: 41%;
+}
+
+.row4 {
+  align-items: center;
+  align-content: center;
+  align-self: center;
+  width: 100%;
+  position: relative;
+  left: 41%;
+}
+
+.row5 {
+  align-items: center;
+  align-content: center;
+  align-self: center;
+  margin-bottom: 10px;
+  width: 100%;
+  position: relative;
+  left: 41%;
+}
+
+.row6 {
+  align-items: center;
+  align-content: center;
+  align-self: center;
+  width: 100%;
+  position: relative;
+  left: 41%;
+}
+
+.row7 {
+  align-items: center;
+  align-content: center;
+  align-self: center;
+  width: 100%;
+  position: relative;
+  left: 41%;
+}
+
+.row8 {
+  align-items: center;
+  align-content: center;
+  align-self: center;
+  width: 100%;
+  left: 41%;
+  position: relative;
+}
+
+.row9 {
+  align-items: center;
+  align-content: center;
+  align-self: center;
+  width: 100%;
+  position: relative;
+  left: 41%;
+}
+
+.row10 {
+  align-items: center;
+  align-content: center;
+  align-self: center;
+  width: 100%;
+  position: relative;
+  left: 41%;
+}
+
+.seat {
+  position: relative;
+  display: inline-block;
+  background-color: #ffffff;
+  width: 30px;
+  height: 27px;
+  margin: auto;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  transform: rotate3d(184, 102, 1, 45deg);
+  align-items: center;
+  align-content: center;
+  align-self: center;
+}
+
+.seat-sold {
+  position: relative;
+  display: inline-block;
+  background-color: #afafaf;
+  width: 30px;
+  height: 27px;
+  margin: auto;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  transform: rotate3d(184, 102, 1, 45deg);
+  align-items: center;
+  align-content: center;
+  align-self: center;
+}
+
+.total-seats {
+  text-align: center;
+  color: white;
+}
+
+
+.li-selected {
+  background-color: rgb(2, 159, 2);
+}
+
+.li-sold {
+  background-color: white;
+  color: black;
+}
+
+
+/*---------------------TICKET PAGE ENDS HERE---------------------------------------------------- */
+
+
+/*-------------------- kontakt PAGE STARTS HERE------------------------------------------------- */
+body.contactPage {
+  background-color: #000000;
+}
+
+.contact {
+  text-align: center;
+  justify-content: space-between;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: white;
+  padding: 20px;
+  position: relative;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-right: 20px;
+  padding-left: 20px;
+  
+}
+
+.contact p{
+  margin:0 auto;
+  padding: 10px 2px;
+  width: 50%;
+  text-align: start;
+  word-wrap: break-word;
+}
+
+.contact a {
+  color:rgba(10, 217, 106, 0.895);
+}
+
+.contact a:hover {
+  cursor: pointer;
+  color: rgba(10,217,106,0.895);
+}
+
+ .contact b{
+  color:rgba(10, 217, 106, 0.895);
+} 
+/*----------------------------- kontakt PAGE ENDS HERE-----------------------------*/
+
+
+/*-----------------------------Om Oss PAGE STARTS HERE---------------------------------------- */
+
+body.aboutPage {
+  background-color: #000000;
+}
+
+.OmOss {
+  text-align: center;
+  justify-content: space-between;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: white;
+  padding: 20px;
+  position: relative;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-right: 20px;
+  padding-left: 20px;
+}
+
+.OmOss p {
+  margin: 0 auto;
+  padding: 10px 2px;
+  width: 50%;
+  text-align: start;
+  word-wrap: break-word;
+}
+
+/*-----------------------------Om Oss PAGE ENDS HERE---------------------------------------- */
+
+.varumarkeslofte {
+  text-align: center;
+  justify-content: space-between;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: white;
+  padding: 20px;
+  position: relative;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-right: 20px;
+  padding-left: 20px;
+}
+
+.varumarkeslofte p {
+  margin: 0 auto;
+  padding: 10px 2px;
+  width: 50%;
+  text-align: start;
+  word-wrap: break-word;
+}
+
+.bioInfo {
+  text-align: center;
+  justify-content: space-between;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: white;
+  padding: 20px;
+  position: relative;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-right: 20px;
+  padding-left: 20px;
+}
+
+.bioInfo p {
+  margin: 0 auto;
+  padding: 10px 2px;
+  width: 50%;
+  text-align: start;
+  word-wrap: break-word;
+}
+
+.karriarmojligheter {
+  text-align: center;
+  justify-content: space-between;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: white;
+  padding: 20px;
+  position: relative;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-right: 20px;
+  padding-left: 20px;
+}
+
+.karriarmojligheter p {
+  margin: 0 auto;
+  padding: 10px 2px;
+  width: 50%;
+  text-align: start;
+  word-wrap: break-word;
+}
+
+.telefon {
+  text-align: center;
+  justify-content: space-between;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: white;
+  padding: 20px;
+  position: relative;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-right: 20px;
+  padding-left: 20px;
+}
+
+.telefon p {
+  margin: 0 auto;
+  padding: 10px 2px;
+  width: 50%;
+  text-align: start;
+  word-wrap: break-word;
+}
+
+.midsommar {
+  text-align: center;
+  justify-content: space-between;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: white;
+  padding: 20px;
+  position: relative;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-right: 20px;
+  padding-left: 20px;
+}
+
+.midsommar p {
+  margin: 0 auto;
+  padding: 10px 2px;
+  width: 50%;
+  text-align: start;
+  word-wrap: break-word;
+}
+
+.regler {
+  text-align: center;
+  justify-content: space-between;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: white;
+  padding: 20px;
+  position: relative;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-right: 20px;
+  padding-left: 20px;
+}
+
+.regler p {
+  margin: 0 auto;
+  padding: 10px 2px;
+  width: 50%;
+  text-align: start;
+  word-wrap: break-word;
+}
+
+/* Booking confirmed page */
+
+body.bookingPage {
+  background-color: #000000;
+}
+
+.doneA {
+  color: white;
+  font-size: 20px;
+  padding-left: 20px;
+}
+
+.doneA img,
+.doneA .information {
+  float: left;
+}
+
+.doneA .information {
+  width: 30%;
+}
+
+.doneA img {
+  display: block;
+  width: 70%;
+  padding: 5px;
+}
+
+/*----------------------Booking confirmation page end.............. */
+
+/* @media (prefers-color-scheme: dark) {
+  .favicon-smiley {
+    fill: #ffff00;
+  }
+
+  .notification-background {
+    fill: #ffc300;
+  }
+}*/
+
+/* ?? ______________________________________ Detail page css start ___________________________________________ ?? */
+
+.detailedPageContainer {
+  color: white;
+  width: 100%;
+}
+
+
+.detailedLeftContainer {
+  width: 22%;
+  float: left;
+}
+
+.detailedRightContainer {
+  height: 400px;
+  width: 50%;
+  float: left;
+  margin-left: 150px;
+}
+
+.detailedTitle {
+  margin-bottom: 30px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+
+.detailedImages {
+  width: 100%;
+  height: 500px;
+  object-fit: fill;
+  border-radius: 10px;
+  box-shadow: 0px 0px 7px 0px rgba(255, 255, 255, 0.3);
+  transition: transform 0.3s ease-in-out;
+  margin: 5%;
+
+}
+
+.movieTrailer {
+  width: 100%;
+  height: 315px;
+  margin: 5%;
+  object-fit: cover;
+  border-radius: 7px 7px;
+  box-shadow: 0px 0px 7px 0px rgba(255, 255, 255, 0.3);
+
+}
+
+.infoPart {
+  float: left;
+  padding-right: 30px;
+  width: 30%;
+}
+
+.clearBoth {
+  clear: both;
+}
+
+.detailedRating {
+  border: 2px solid gray;
+  font-size: 18px;
+  background-color: rgb(142, 126, 126);
+  padding-left: 20px;
+  color: #ffffff;
+  margin: 10px 0;
+  bottom: 10px;
+}
+
+/*
+@media (prefers-color-scheme: dark) {
+  .favicon-smiley {
+    fill: #ffff00;
+  }
+  .notification-background {
+    fill: #ffc300;
+  }
+} */
+
+.detailedRatingDropdown {
+  background-color: rgb(7, 5, 5);
+  border: 1px solid rgb(0, 0, 0);
+  box-shadow: 2px 2px 10px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+.buttonRatings {
+  background-color: rgba(0, 0, 0, 0);
+  color: #808080;
+  border-radius: 4px;
+}
+
+.buttonRatings:hover {
+  color: #add8e6;
+}
+
+.buttonScreenings {
+  background-color: rgba(0, 0, 0, 0);
+  color: #808080;
+  margin-left: 30px;
+  border-radius: 4px;
+}
+
+.buttonScreenings:hover {
+  color: #add8e6;
+}
+
+
+/* --------------------Detail page css end here--------------------- */
+
+/* css register starts */
+
+body.registerPage {
+  background-color: rgb(239, 230, 230);
+}
+
+
+.register{
+  background-color: rgb(46, 11, 102);
+  width:450px;
+  height:400px;
+  position:relative;
+  border-radius:7%;
+  margin:auto;
+  border-top-left-radius: 0%;
+  margin-top:30px ;
+}
+
+.register_form{
+  display:flex;
+  margin:auto;
+  background-color: rgb(122,119,226);
+  justify-content:center;
+  width:400px;
+  height:350px;
+  align-items:center;
+  padding:20px;
+  border-radius:7%;
+  position:absolute;
+  top: 15px;
+  right: 14px;
+  border: top left radius 0%;
+  background: linear-gradient(to bottom,#00ABBE, #2057A9, #0A2E52, rgb(60, 59, 74));
+  box-shadow:0px 60px 300px 35px #000000;
+}
+
+.label{
+  display:block;
+  margin-bottom:2px;
+  font-family:sans-serif;
+  font-size:auto;
+  font-weight:bold;
+  color:rgb(79, 7, 7);
+  text-transform:uppercase;
+}
+
+.label.label::after {
+  content: "";
+  color: red;
+}
+
+.username,.password,.firstname,
+.lastname{
+  display:block;
+  font-family:sans-serif;
+  font-size:16px;
+  color:rgba(143, 11, 86, 0.82);
+  border-radius:3px;
+  border-style:none;
+  background-color: rgb(41,41,41);
+
+}
+
+.remember {
+  padding: 1px;
+  font-size: 13px;
+  background-color: lightgray;
+  border-radius: 5px;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
+}
+
+.remember:hover,
+.remember:active {
+  background-color: rgb(129, 255, 205);
+}
+
+.register_button {
+  width: 100%;
+  height: 30px;
+  position: relative;
+  display: block;
+  margin-top: 24%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 0%;
+  padding: auto;
+  color: white;
+  background-color: #0A2E52;
+  border-radius: 10px;
+  border-style: none;
+  box-sizing: content-box;
+  background: linear-gradient(to right, rgb(0, 145, 255), rgb(17, 0, 255), rgb(26, 0, 156));
+
+}
+
+.register_button:hover,
+.register_button:active {
+  background: linear-gradient(to left, rgb(255, 255, 255), rgb(218, 218, 218), rgb(197, 197, 197), rgb(146, 146, 146));
+  box-shadow: 0px 5px 100px 10px #ffffff;
+}
+
+.loginlink {
+  position: absolute;
+  margin-top: 35px;
+  color: rgb(22, 137, 101);
+  float: left;
+}
+
+Detail page css end here */
+/* ....................login page scc start here...................*/
+
+body.loginPage {
+  background-color: rgb(23, 23, 23);
+}
+
+.login {
+  background-color: rgb(46, 11, 102);
+  width: 450px;
+  height: 400px;
+  position: relative;
+  border-radius: 7%;
+  margin: auto;
+  border: top left radius 0%;
+  margin-top: 30px;
+
+}
+
+.login_form {
+  display: flex;
+  margin: auto;
+  background-color: rgb(122, 119, 226);
+  justify-content: center;
+  width: 400px;
+  height: 350px;
+  align-items: center;
+  padding: 20px;
+  border-radius: 7%;
+  position: absolute;
+  top: 15px;
+  right: 14px;
+  border-top-left-radius: 0%;
+  background: linear-gradient(to bottom, #00ABBE, #2057A9, #0A2E52, rgb(60, 59, 74));
+  box-shadow: 0px 60px 300px 35px #000000;
+}
+
+/*body {
+  font-family: 'Arima';
+  font-size: 20px;
+  margin: 30px;*/
+
+
+
+.login label,
+.login input {
+  display: block;
+  margin-bottom: 2px;
+  font-weight: bold;
+  font-size: auto;
+
+}
+
+.login label {
+  margin-bottom: 5px;
+  margin-top: 20px;
+}
+
+.login input {
+  width: 50%;
+}
+
+.login input[type="email"] {
+  width: 30%;
+  text-align: center;
+  display: inline-block;
+  margin-top: 40px;
+}
+
+.login input[type="password"] {
+  width: 50%;
+  text-align: center;
+  display: inline-block;
+
+}
+
+.login button {
+  width: 100%;
+  height: 30px;
+  display: block;
+  margin-top: 24%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: auto;
+  background-color: #b4c4d3;
+  position: relative;
+  background: linear-gradient(to right, rgb(46, 62, 75), rgb(130, 123, 227), rgb(26, 0, 156));
+
+}
+
+/* ....................login page scc ends here...................*/
