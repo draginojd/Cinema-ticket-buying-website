@@ -8,7 +8,7 @@ You can track all my progress in the original repository and in this current one
 
 ## I downloaded this project as a zip and created a new repository on my own Github so I could continue working on the website without the need of others accepting my pull requests.
 
-## start
+## First time SETUP Guide
 
 to build the react the first time use
 
