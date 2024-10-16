@@ -10,19 +10,19 @@ You can track all my progress in the original repository and in this current one
 
 ## First time SETUP Guide
 
-to build the react the first time use
+To build the react app for the first time use
 
 ```js
 npm run init
 ```
 
-to build it if you have already installed all the dependeces then you use
+To build it if you have already installed all the dependeces then you use
 
 ```js
 npm run dev
 ```
 
-start the server
+Start the server using
 ```js
 npm run server
 ```
